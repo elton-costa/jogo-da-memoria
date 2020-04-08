@@ -1,33 +1,31 @@
-function createMemoryCard() {
-    const $memoryCard = `
-        <article class="memory-card">
+const createMemoryCard = nameClass => {
+    let src = "img/icon-collabcode.png";
+
+    if (nameClass == "-front") {
+        src = "img/icon-c.png";
+    };
+
+    return `
+        <article class="memory-card ${nameClass}">
             <img
-                src='img/icon-collabcode.png'
-                alt='Gueio mascote da CollabCode'
-                class='icon'
-                onClick='handleClick()'
+                src="${src}"
+                alt="Gueio mascote da CollabCode"
+                class="icon"
+                onClick="handleClick()"
             />
         </article>
     `;
+};
 
-    return $memoryCard;
-}
+// const createMemoryCardFront = () => `
+//     <article class="memory-card -front">
+//         <img
+//             src='img/icon-c.png'
+//             alt='Gueio mascote da CollabCode'
+//             class='icon'
+//             onClick='handleClick()'
+//         />
+//     </article>
+// `;
 
-function createMemoryCardFront() {
-    const $memoryCard = `
-        <article class="memory-card -front">
-            <img
-                src='img/icon-c.png'
-                alt='Gueio mascote da CollabCode'
-                class='icon'
-                onClick='handleClick()'
-            />
-        </article>
-    `;
-
-    return $memoryCard;
-}
-
-function handleClick() {
-    console.log("ae");
-}
+const handleClick = () => console.log("ae");
