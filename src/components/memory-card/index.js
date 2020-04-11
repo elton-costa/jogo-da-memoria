@@ -51,6 +51,14 @@ function memoryCard() {
                 onClick="handleClick()"
             />
         </article>
+        <article class="memory-card">
+            <img
+                src="img/icon-collabcode.png"
+                alt="O mascote da CollabCode o Gueio"
+                class="icon"
+                onClick="handleClick()"
+            />
+        </article>
     `;
 };
 
