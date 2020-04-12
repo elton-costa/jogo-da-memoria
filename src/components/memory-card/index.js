@@ -57,13 +57,12 @@ function memoryCard() {
     $head.insertBefore($style, null);
 
     return ({ nameClass, src, alt }) => `
-        <div class="memory-card -active">
+        <div class="memory-card" onClick="handleClick(this)">
         <article class="card -front">
             <img
                 src="${src}"
                 alt="${alt}"
                 class="icon"
-                onClick="handleClick()"
             />
         </article>
         <article class="card">
@@ -71,11 +70,10 @@ function memoryCard() {
                 src="img/icon-collabcode.png"
                 alt="O mascote da CollabCode o Gueio"
                 class="icon"
-                onClick="handleClick()"
             />
         </article>
         </div>
     `;
 };
 
-const handleClick = () => console.log("ae");
+const handleClick = $component => $component.classList.toggle("-active"); 
