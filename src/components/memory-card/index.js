@@ -22,11 +22,13 @@ function memoryCard() {
             position: absolute;
         }
 
-        .memory-card.-active .card {
+        .memory-card.-active .card,
+        .memory-card.-score .card {
             display: none;
         }
 
-        .memory-card.-active .card.-front {
+        .memory-card.-active .card.-front,
+        .memory-card.-score .card.-front {
             display: flex;
         }
 
@@ -92,7 +94,11 @@ const handleClick = $component => {
                 $memoryCards[1].querySelector(".-front .icon").getAttribute("src")
             ) {
                 score++;
-                console.log("Valeu score:", score);
+                console.log("score:", score);
+                $memoryCards.forEach($memoryCard => {
+                    $memoryCard.classList.add("-score");
+                    $memoryCard.classList.remove("-active");
+                });
             } else {
                 setTimeout(() => {
                     const $activeMemoryCards = document.querySelectorAll(".memory-card.-active");
