@@ -20,16 +20,10 @@ function createCardsWrapper() {
     `;
     $head.insertBefore($style, null);
 
-    $cardsWrapper.addEventListener("click", event => {
-        const $origin = event.target;
-
-        if ($origin.closest(".memory-card.-active")) {
-            qtdActiveMemoryCard = qtdActiveMemoryCard + 1;
-        } else if ($origin.closest(".memory-card")) {
-            qtdActiveMemoryCard = qtdActiveMemoryCard - 1;
-        }
-
-        console.log("qtd:", qtdActiveMemoryCard);
+    $cardsWrapper.addEventListener("click", () => {
+        
+        qtdActiveMemoryCard = $cardsWrapper.querySelectorAll(".memory-card.-active").length;
+        console.log(qtdActiveMemoryCard);
     });
 
     return $cardsWrapper;
