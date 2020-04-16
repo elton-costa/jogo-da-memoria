@@ -77,11 +77,21 @@ function memoryCard() {
 };
 
 const handleClick = $component => {
+if(!$component.classList.contains("-active")) {
     if (qtdActiveMemoryCard < 2) {
         $component.classList.toggle("-active");
     }
 
     if (qtdActiveMemoryCard == 1) {
+        const $memoryCards = document.querySelectorAll(".memory-card.-active");
+
+        if (
+            $memoryCards[0].querySelector(".-front .icon").getAttribute("src") ==
+            $memoryCards[1].querySelector(".-front .icon").getAttribute("src")
+        ) {
+            console.log("são iaguais");
+        }
+
         setTimeout(() => {
             const $activeMemoryCards = document.querySelectorAll(".memory-card.-active");
 
@@ -91,5 +101,5 @@ const handleClick = $component => {
             qtdActiveMemoryCard = 0;
         }, 1500);
     }
-     
+} 
 };
