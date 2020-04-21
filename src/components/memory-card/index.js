@@ -82,9 +82,7 @@ let score = 0;
 const handleClick = $component => {
 
     if(!$component.classList.contains("-active")) {
-        if (qtdActiveMemoryCard < 2) {
-            $component.classList.toggle("-active");
-        }
+        activeMemoryCard($component);
 
         if (qtdActiveMemoryCard == 1) {
             const $activeMemoryCards = document.querySelectorAll(".memory-card.-active");
@@ -110,4 +108,10 @@ const handleClick = $component => {
             }
         }
     } 
+};
+
+function activeMemoryCard($component) {
+    if (qtdActiveMemoryCard < 2) {
+        $component.classList.add("-active");
+    }
 };
