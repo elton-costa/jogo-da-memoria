@@ -27,14 +27,20 @@ const gameButton = (function() {
         $head.insertBefore($style, null);
     };
 
+    module.handleClick = $component => {
+        $component.remove();
+        document.querySelector(".transparency-layer").remove();
+    };
+
     module.render = () => {
         module._style();
         return `
-            <button class="game-button">Start</button>
+            <button class="game-button" onClick="gameButton.handleClick(this)">Start</button>
         `;
     };
 
     return {
-        render: module.render
+        render: module.render,
+        handleClick: module.handleClick
     };
 })();
