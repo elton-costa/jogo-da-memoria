@@ -3,6 +3,7 @@
 
     const $loginButton = flatButton.render("Login");
     const $signupButton = flatButton.render("Signup", true);
+    const $avatarWrapper = avatarWrapper.render();
     const $logoCollabcode = logoCollabcode.render();
     const $titleCollabcode = titleCollabcode.render("Welcome!");
 
