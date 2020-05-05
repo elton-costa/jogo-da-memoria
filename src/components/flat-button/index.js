@@ -12,8 +12,7 @@ const flatButton = (function () {
                 color: #fffcee;
                 font-size: 24px;
                 font-weight: bold;
-                border: none;
-                width: 186px;
+                width: 50%;
                 height: 176px;
                 text-transform: uppercase;
             }
@@ -23,10 +22,10 @@ const flatButton = (function () {
     };
 
 
-    module.render = () => {
+    module.render = (content = "") => {
         module._style();
 
-        return `<button class="flat-button">Login</button>`;
+        return `<button class="flat-button">${content}</button>`;
     };
 
     return {
