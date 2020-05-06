@@ -7,6 +7,12 @@ const logoCollabcode = (function () {
 
         $style.textContent = `
             .logo-collabcode {
+                background-color: white;
+                display: inline-block;
+                border: solid 40px white;
+                border-radius: 50%;
+            }
+            .logo-collabcode > .logo {
                 width: 175px;
             }
         `;
@@ -15,7 +21,11 @@ const logoCollabcode = (function () {
 
     module.render = () => { 
         module._style();
-        return `<img class="logo-collabcode" src="/img/icon-collabcode.png">`;
+        return `
+            <figure class="logo-collabcode">
+                <img class="logo" src="/img/icon-collabcode.png">
+            </figure>
+        `;
     };
 
     return {

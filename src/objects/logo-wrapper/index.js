@@ -8,6 +8,7 @@ const logoWrapper = (function () {
         $style.textContent = `
             .logo-wrapper {
                 text-align: center;
+                transform: translateY(-25%);
             }
         `;
         $head.insertAdjacentElement("beforeend", $style);
