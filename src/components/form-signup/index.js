@@ -1,26 +1,35 @@
 const formSignup = (function () {
     const module = {};
 
-    module._style = () => {
-        const $head = document.querySelector("head");
-        const $style = document.createElement("style");
+    module._children = () => {
+        const $emailLabel = labelCollabcode.render("E-mail");
+        const $emailInput = inputCollabcode.render();
 
-        $style.textContent = `
-            .form-signup {
-                display: block;
-                color: #3a4042;
-                font-size: 16px;
-            }
+        const $usernameLabel = labelCollabcode.render("Username");
+        const $usernameInput = inputCollabcode.render();
+
+        const $passwordLabel = labelCollabcode.render("Password");
+        const $passwordInput = inputCollabcode.render();
+
+        const $confirmPasswordLabel = labelCollabcode.render("Confirm Password");
+        const $confirmPasswordInput = inputCollabcode.render();
+
+        return `
+            ${$emailLabel}
+            ${$emailInput}
+
+            ${$usernameLabel}
+            ${$usernameInput}
+
+            ${$passwordLabel}
+            ${$passwordInput}
+
+            ${$confirmPasswordLabel}
+            ${$confirmPasswordInput}
         `;
-
-        $head.insertAdjacentElement("beforeend", $style);
     };
 
-    module.render = content => {
-        module._style();
-    
-    return `<form action="" method="POST"></form>`;
-    };
+    module.render = () => `<form action="" method="POST">${module._children()}</form>`;
 
     return {
         render: module.render
