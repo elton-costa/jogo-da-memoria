@@ -7,6 +7,7 @@ const labelCollabcode = (function () {
 
         $style.textContent = `
             .label-collabcode {
+                display: block;
                 color: #3a4042;
                 font-size: 16px;
             }
