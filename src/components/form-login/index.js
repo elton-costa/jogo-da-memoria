@@ -21,6 +21,7 @@ const formLogin = (function () {
 
         const $passwordLabel = labelCollabcode.render("Password");
         const $passwordInput = inputCollabcode.render({placeholder: "******", type: "password"});
+        const $eyeCollabcode = eyeCollabcode.render();
 
         const $linkCollabcode = linkCollabcode.render({href: "#", content: "Forget password?"});
 
@@ -33,6 +34,7 @@ const formLogin = (function () {
 
             ${$passwordLabel}
             ${$passwordInput}
+            ${$eyeCollabcode}
 
             ${$linkCollabcode}
 
