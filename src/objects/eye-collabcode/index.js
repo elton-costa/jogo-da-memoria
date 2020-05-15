@@ -25,11 +25,11 @@ const eyeCollabcode = (function() {
 
     };
 
-    module.render = () => { 
+    module.render = ({attrFor = ""}) => { 
         module._style();
 
         return `
-            <label class="eye-collabcode" onClick="eyeCollabcode.handleClick()">Mostrar senha</label>
+            <label for="${attrFor}" class="eye-collabcode" onClick="eyeCollabcode.handleClick()">Mostrar senha</label>
         `;
     };
 

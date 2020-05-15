@@ -20,8 +20,8 @@ const formLogin = (function () {
         const $usernameInput = inputCollabcode.render({placeholder: "exemple@gmail.com"});
 
         const $passwordLabel = labelCollabcode.render("Password");
-        const $passwordInput = inputCollabcode.render({placeholder: "******", type: "password"});
-        const $eyeCollabcode = eyeCollabcode.render();
+        const $passwordInput = inputCollabcode.render({id: "password", placeholder: "******", type: "password"});
+        const $eyeCollabcode = eyeCollabcode.render({attrFor: "password"});
 
         const $linkCollabcode = linkCollabcode.render({href: "#", content: "Forget password?"});
 
