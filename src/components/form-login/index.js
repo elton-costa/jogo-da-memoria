@@ -25,7 +25,7 @@ const formLogin = (function () {
 
         const $linkCollabcode = linkCollabcode.render({href: "#", content: "Forget password?"});
 
-        const $btn = btnCollabcode.render("Login");
+        const $btn = btnCollabcode.render({content: "Login", path: "game"});
 
         return `
           
